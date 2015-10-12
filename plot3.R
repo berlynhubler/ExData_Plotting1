@@ -17,6 +17,7 @@ dates <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(dates)
 
 # plot 3 - submetering
+
 with(data, {
      plot(Sub_metering_1~Datetime, type="l",
           ylab="Global Active Power (kilowatts)", xlab="")
