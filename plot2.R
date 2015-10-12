@@ -16,7 +16,8 @@ rm(full_data)
 dates <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(dates)
 
-# plot 1 - hist
-hist(data$Global_active_power, ylab = "Frequency", xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
-dev.copy(png, file="plot1.png", height=480, width=480)
+# plot 2 - line
+plot(data$Global_active_power~data$Datetime, type="l",
+     ylab="Global Active Power (kilowatts)", xlab="")
+dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()
